@@ -1,0 +1,325 @@
+<!DOCTYPE html> 
+<html>
+<meta charset="utf-8" />
+<head>
+<link rel="stylesheet"
+href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css" />
+<script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"></script>
+<script src='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/Leaflet.fullscreen.min.js'></script>
+<link
+href='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/leaflet.fullscreen.css'
+rel='stylesheet' />
+
+<style>
+ #map {
+ width: 100%;
+ height: 600px;
+ box-shadow: 5px 5px 5px #888;
+}
+ .info {
+padding: 6px 8px;
+font: 14px/16px Arial, Helvetica, sans-serif;
+background: white;
+background: rgba(175,312,60,1);
+box-shadow: 0 0 15px rgba(0,0,0,0.2);
+border-radius: 5px;
+}
+.info h2 {
+margin: 0 0 5px;
+color: #444;
+}
+</style>
+</head>
+ <body>
+ <body oncontextmenu="return false" onkeydown="return false">
+ <div id="map"></div>
+ <script>
+
+ var osm = L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', {
+            maxZoom: 18,
+            attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, ' +
+                '<a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
+                'Imagery © <a href="http://mapbox.com">Mapbox</a>',
+            id: 'mapbox.outdoors'
+        });
+
+var map = L.map('map', {
+ center: [37.600, -4.500],
+ zoom: 8,
+ layers:osm,
+ scrollWheelZoom:true,
+});
+
+
+  // CÁDIZ
+  //Cádiz
+ var Cadiz = L.icon({     
+ iconUrl: '  https://image.flaticon.com/icons/svg/1163/1163764.svg',     
+ iconSize: [25, 25],    
+ popupAnchor: [-1, -10] }); 
+ 
+ var markerCadiz = L.marker([36.5297800, -6.29465500], {icon: Cadiz}) 
+ .addTo(map) 
+ .bindPopup("Cádiz, poco nuboso</b>"); 
+ 
+ //Jerez
+ var Jerez = L.icon({     
+ iconUrl: '  https://image.flaticon.com/icons/svg/1163/1163764.svg',     
+ iconSize: [25, 25],    
+ popupAnchor: [-1, -10] }); 
+ 
+ var markerJerez = L.marker([36.686451, -6.136060], {icon: Jerez}) 
+ .addTo(map) 
+ .bindPopup("Jerez, poco nuboso</b>"); 
+ 
+  //Algeciras
+ var Algeciras = L.icon({     
+ iconUrl: ' https://image.flaticon.com/icons/svg/1163/1163764.svg',     
+ iconSize: [25, 25],    
+ popupAnchor: [-1, -10] }); 
+ 
+ var markerAlgeciras = L.marker([36.101864, -5.4528434], {icon: Algeciras}) 
+ .addTo(map) 
+ .bindPopup("Algeciras, despejado </b>"); 
+ 
+ 
+   // HUELVA
+  //Huelva
+ var Huelva = L.icon({     
+ iconUrl: '  https://image.flaticon.com/icons/svg/1163/1163764.svg',     
+ iconSize: [25, 25],    
+ popupAnchor: [-1, -10] }); 
+ 
+ var markerHuelva = L.marker([37.26638, -6.9400], {icon: Huelva}) 
+ .addTo(map) 
+ .bindPopup("Huelva, poco nuboso</b>"); 
+ 
+ //Aracena
+ var Aracena = L.icon({     
+ iconUrl: ' https://image.flaticon.com/icons/svg/1163/1163764.svg',     
+ iconSize: [25, 25],    
+ popupAnchor: [-1, -10] }); 
+ 
+ var markerAracena = L.marker([37.8939, -6.5611], {icon: Aracena}) 
+ .addTo(map) 
+ .bindPopup("Aracena, despejado </b>"); 
+ 
+  //Ayamonte
+ var Ayamonte = L.icon({     
+ iconUrl: 'https://image.flaticon.com/icons/svg/1163/1163764.svg',     
+ iconSize: [25, 25],    
+ popupAnchor: [-1, -10] }); 
+ 
+ var markerAlgeciras = L.marker([37.2099, -7.4026], {icon: Ayamonte}) 
+ .addTo(map) 
+ .bindPopup("Ayamonte, poco nuboso </b>"); 
+ 
+ 
+  // SEVILLA
+  //Sevilla
+ var Sevilla = L.icon({     
+ iconUrl: '  https://image.flaticon.com/icons/svg/1163/1163764.svg',     
+ iconSize: [25, 25],    
+ popupAnchor: [-1, -10] }); 
+ 
+ var markerSevilla = L.marker([37.3828, -5.9731], {icon: Sevilla}) 
+ .addTo(map) 
+ .bindPopup("Sevilla, poco nuboso</b>"); 
+ 
+ //Écija
+ var Écija = L.icon({     
+ iconUrl: '  https://image.flaticon.com/icons/svg/1163/1163764.svg',     
+ iconSize: [25, 25],    
+ popupAnchor: [-1, -10] }); 
+ 
+ var markerÉcija = L.marker([37.54220, -5.08260], {icon: Écija}) 
+ .addTo(map) 
+ .bindPopup("Écija, despejado </b>"); 
+ 
+  //Morón
+ var Morón = L.icon({     
+ iconUrl: '  https://image.flaticon.com/icons/svg/1163/1163764.svg',     
+ iconSize: [25, 25],    
+ popupAnchor: [-1, -10] }); 
+ 
+ var markerMorón = L.marker([37.1208, -5.4540], {icon: Morón}) 
+ .addTo(map) 
+ .bindPopup("Morón, poco nuboso </b>"); 
+ 
+ 
+   // CÓRDOBA
+  //Córdoba
+ var Córdoba = L.icon({     
+ iconUrl: ' https://image.flaticon.com/icons/svg/1163/1163764.svg',     
+ iconSize: [25, 25],    
+ popupAnchor: [-1, -10] }); 
+ 
+ var markerCórdoba = L.marker([37.8915, -4.7727], {icon: Córdoba}) 
+ .addTo(map) 
+ .bindPopup("Córdoba, poco nuboso</b>"); 
+ 
+ //Lucena
+ var Lucena = L.icon({     
+ iconUrl: '  https://image.flaticon.com/icons/svg/1163/1163764.svg',     
+ iconSize: [25, 25],    
+ popupAnchor: [-1, -10] }); 
+ 
+ var markerLucena = L.marker([37.4020, -4.4868], {icon: Lucena}) 
+ .addTo(map) 
+ .bindPopup("Lucena, poco nuboso </b>"); 
+ 
+  //Pozoblanco
+ var Pozoblanco = L.icon({     
+ iconUrl: ' https://image.flaticon.com/icons/svg/1163/1163764.svg',     
+ iconSize: [25, 25],    
+ popupAnchor: [-1, -10] }); 
+ 
+ var markerPozoblanco = L.marker([38.3723, -4.8484], {icon:Pozoblanco}) 
+ .addTo(map) 
+ .bindPopup("Pozoblanco, despejado </b>"); 
+ 
+ 
+ 
+   // MÁLAGA
+  //Málaga
+ var Málaga = L.icon({     
+ iconUrl: ' https://image.flaticon.com/icons/svg/1163/1163764.svg',     
+ iconSize: [25, 25],    
+ popupAnchor: [-1, -10] }); 
+ 
+ var markerMálaga = L.marker([36.7201, -4.4203], {icon: Málaga}) 
+ .addTo(map) 
+ .bindPopup("Málaga, intervalos nubosos</b>"); 
+ 
+ //Antequera
+ var Antequera = L.icon({     
+ iconUrl: '  https://image.flaticon.com/icons/svg/1163/1163764.svg',     
+ iconSize: [25, 25],    
+ popupAnchor: [-1, -10] }); 
+ 
+ var markerAntequera = L.marker([37.0193, -4.5612], {icon: Antequera}) 
+ .addTo(map) 
+ .bindPopup("Antequera, poco nuboso </b>"); 
+ 
+  //Marbella
+ var Marbella = L.icon({     
+ iconUrl: ' https://image.flaticon.com/icons/svg/1163/1163764.svg',     
+ iconSize: [25, 25],    
+ popupAnchor: [-1, -10] }); 
+ 
+ var markerMarbella = L.marker([36.5154, -4.8858], {icon: Marbella}) 
+ .addTo(map) 
+ .bindPopup("Marbella, despejado </b>"); 
+ 
+    // JAÉN
+  //Jaén
+ var Jaén = L.icon({     
+ iconUrl: 'https://image.flaticon.com/icons/svg/1163/1163764.svg',     
+ iconSize: [25, 25],    
+ popupAnchor: [-1, -10] }); 
+ 
+ var markerJaén = L.marker([37.7692, -3.7902], {icon: Jaén}) 
+ .addTo(map) 
+ .bindPopup("Jaén, poco nuboso</b>"); 
+ 
+ //Andújar
+ var Andújar = L.icon({     
+ iconUrl: ' https://image.flaticon.com/icons/svg/1163/1163764.svg',     
+ iconSize: [25, 25],    
+ popupAnchor: [-1, -10] }); 
+ 
+ var markerAndújar = L.marker([38.1769, -4.1036], {icon: Andújar}) 
+ .addTo(map) 
+ .bindPopup("Andújar, despejado </b>"); 
+ 
+  //Úbeda
+ var Úbeda = L.icon({     
+ iconUrl: ' https://image.flaticon.com/icons/svg/1163/1163764.svg',     
+ iconSize: [25, 25],    
+ popupAnchor: [-1, -10] }); 
+ 
+ var markerÚbeda = L.marker([38.0132, -3.3705], {icon: Úbeda}) 
+ .addTo(map) 
+ .bindPopup("Úbeda, despejado </b>"); 
+ 
+ 
+     // GRANADA
+  //Granada
+ var Granada = L.icon({     
+ iconUrl: ' https://image.flaticon.com/icons/svg/1163/1163764.svg',     
+ iconSize: [25, 25],    
+ popupAnchor: [-1, -10] }); 
+ 
+ var markerGranada = L.marker([37.1881, -3.6066], {icon: Granada}) 
+ .addTo(map) 
+ .bindPopup("Granada, poco nuboso</b>"); 
+ 
+ //Motril
+ var Motril = L.icon({     
+ iconUrl: ' https://image.flaticon.com/icons/svg/1163/1163764.svg',     
+ iconSize: [25, 25],    
+ popupAnchor: [-1, -10] }); 
+ 
+ var markerMotril = L.marker([36.7506, -3.5179], {icon: Motril}) 
+ .addTo(map) 
+ .bindPopup("Motril, despejado </b>"); 
+ 
+  //Baza
+ var Baza = L.icon({     
+ iconUrl: ' https://image.flaticon.com/icons/svg/1163/1163764.svg',     
+ iconSize: [25, 25],    
+ popupAnchor: [-1, -10] }); 
+ 
+ var markerBaza = L.marker([37.4907, -2.7725], {icon: Baza}) 
+ .addTo(map) 
+ .bindPopup("Baza, despejado </b>"); 
+ 
+ 
+      // ALMERÍA
+  //Almería
+ var Almería = L.icon({     
+ iconUrl: ' https://image.flaticon.com/icons/svg/1163/1163764.svg',     
+ iconSize: [25, 25],    
+ popupAnchor: [-1, -10] }); 
+ 
+ var markerAlmería = L.marker([36.8381, -2.4597], {icon: Almería}) 
+ .addTo(map) 
+ .bindPopup("Almería, soleado</b>"); 
+ 
+ //El Ejido
+ var ElEjido = L.icon({     
+ iconUrl: ' https://image.flaticon.com/icons/svg/1163/1163764.svg',     
+ iconSize: [25, 25],    
+ popupAnchor: [-1, -10] }); 
+ 
+ var markerElEjido = L.marker([36.7762, -2.8145], {icon: ElEjido}) 
+ .addTo(map) 
+ .bindPopup("El Ejido, poco nuboso </b>"); 
+ 
+  //Huércal Overa
+ var HuércalOvera = L.icon({     
+ iconUrl: 'https://image.flaticon.com/icons/svg/1163/1163764.svg',     
+ iconSize: [25, 25],    
+ popupAnchor: [-1, -10] }); 
+ 
+ var markerHuércalOvera = L.marker([37.3889, -1.9453], {icon: HuércalOvera}) 
+ .addTo(map) 
+ .bindPopup("Huércal Overa, poco nuboso </b>");
+ 
+ 
+ 
+  var title = L.control();
+title.onAdd = function (map) {
+ var div = L.DomUtil.create('div', 'info');
+ div.innerHTML +=
+ '<h2>Andalucía</h2>3 de Julio';
+ return div;
+};
+title.addTo(map);
+ 
+
+L.control.scale().addTo(map);
+map.addControl(new L.Control.Fullscreen());
+</script>
+</body>
+</html>
